@@ -1,0 +1,159 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica;
+    font-size: large;
+    background: #e8e8e8;
+}
+/*estilos de los botones de envio*/
+.envio{
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.envio button{
+    margin: 2%;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    background: #ef5d1f;
+    color: white;
+}
+.envio button:hover{
+    cursor: pointer;
+}
+/*estilo para el calendario*/
+p{
+    margin-left: 15px;
+}
+.calendario{
+    width: 250px;
+    height: 250px;
+    background-color: rgb(157, 70, 70);
+    float: left;
+    margin-left: 15px;
+}
+/*estilos del formulario*/
+.form{
+    position: relative;
+    z-index: 1;
+    background: #FFFF;
+    max-width: 40%;
+    margin: 0 auto 100px;
+    padding: 1%;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0,  0, 0, 0.2), 0 5px 5px 0 rgba(0,  0, 0, 0.24);
+    }
+.form input{
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    font-size: large;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+/*estilo de la caja proyectos*/
+.caja-proyectos{
+    float: right;
+    text-align: center;
+    list-style: none;
+    width: 25%;
+    margin-top: 20px;
+    padding-top: 1rem;
+    padding: 2%;
+    background-color: white;
+    height: 150px;
+    box-shadow: 0 0 20px 0 rgba(0,  0, 0, 0.2), 0 5px 5px 0 rgba(0,  0, 0, 0.24);
+}
+.caja-proyectos button{
+    width: 100%;
+    border: none;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+    padding: 5%;
+    background: #ef5d1f;
+}
+/*estilos del menu superior*/
+.menu{
+    width: 100%;
+    padding: 0%;
+    margin: auto;
+    background: #43a047;
+    list-style: none;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 2rem;
+    display: block;
+}
+.menu li{
+    display: inline-block;
+    text-align:end;
+}
+.menu li a:hover{
+    background: #ef8354;
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+ul{
+    list-style: none;
+}
+.pie{
+    background-color: #24262b;
+    padding: 70px 0;
+}
+.linea{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    width: 25%;
+    padding: 0 15px;
+}
+.col h4{
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+.col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 50px;
+    bottom: -5px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+}
+.col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}

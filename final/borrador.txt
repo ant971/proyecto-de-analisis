@@ -1,0 +1,167 @@
+<?php
+include("conn/conexion.php");
+$sql="select * from proyecto";
+$resultado = mysqli_query($conexion, $sql);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profesor.css">
+    <title>Profesor</title>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="informacion.html">Informacion</a></li>
+            <li><a href="#">Contactanos</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a class="usuario" href="#">Username</a></li>
+        </ul>
+    </nav>
+    <br>
+    <p>calendario</p>
+    <div class="calendario">
+        
+    </div>
+    <tbody>
+        <?php
+             while($filas=mysqli_fetch_assoc($resultado)){
+         ?>
+        <div class="caja-proyectos">
+            <p>Consultar Proyectos</p> <br>
+            <div class="ver_proyecto">
+                <button> Proyectos</button>
+            </div> 
+            <br>
+        </div>
+        <tr>
+            <td><?php echo $filas ['ID'] ?></td>
+            <td><?php echo $filas ['titulo'] ?></td>
+            <td><?php echo $filas ['duracion'] ?></td>
+            <td><?php echo $filas ['fecha_inicio'] ?></td>
+            <td><?php echo $filas ['fecha_final'] ?></td>
+        </tr>
+        <?php
+         }
+     ?>
+    </tbody>
+    <br>
+    <div class="publicacion">
+        <div class="form">
+        <form class="Registro">
+            <input type="text" placeholder="Solicitud">
+            <input type="text" placeholder="Justificacion">
+            <br>
+            <div class="descarga">
+                <a href="formulario">Descargue el formulario</a>
+            </div>
+            <br>
+            <p>Colocar archivos</p>
+            <input type="submit" placeholder="archivos" value="Enviar archivos">
+            <div class="envio">
+                <button>Guardar Cambios</button>
+                <button>Enviar</button>
+            </div>
+        </form>
+        </div>
+</div>
+    <footer class="pie">
+        <div class="container">
+            <div class="linea">
+                <div class="col">
+                    <h4>Nosotros</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">servicios</a></li>
+                        <li><a href="#">Politica de privacidad</a></li>
+                        <li><a href="#">Otros proyectos y programas</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Nuestras Redes</h4>
+                    <div class="redes">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Whatsapp</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4>Contactanos</h4>
+                    <ul>
+                        <li><a href="#">Correo</a></li>
+                        <li><a href="#">telefono</a></li>
+                        <li><a href="#">Direccion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+///inicio de sesion
+
+<?php
+include("conexion.php");
+session_start();
+$usuarios = array("usuario1" => "contraseña1", "usuario2" => "contraseña2");
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $usuario = $_POST["usuario"];
+    $contraseña = $_POST["contraseña"];
+    $rol = $_POST["rol"]; // Obtener el valor del campo de selección de rol
+    
+    if (isset($usuarios[$usuario]) && $usuarios[$usuario] == $contraseña){
+        $_SESSION["usuario"] = $usuario;
+        $_SESSION["rol"] = $rol; // Guardar el rol en la sesión
+        header("Location: ventanasDeUsuarios/profesor.php");
+        exit();
+    }else{
+        $mensaje = "Usuario o contraseña incorrectos";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sesion.css">
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Informacion</a></li>
+        </ul>
+    </nav>
+    <div class="form">
+        <div class="login">
+            <form class="login-form" method="post">
+                <input type="text" name="usuario" placeholder="email">
+                <input type="password" name="contraseña" placeholder="password">
+                <div class="opciones">
+                    <label for="rol">elija una opción</label>
+                    <select name="rol" id="rol">
+                        <option value="profesor">profesor</option>
+                        <option value="estudiante">estudiante</option>
+                        <option value="decano">decano</option>
+                        <option value="VIEX">VIEX</option>
+                        <option value="VIEX">Comision</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit">LOGIN</button>
+                <p class="message"> ¿No estás registrado? <br>
+                    <a href="registro.php">Crear cuenta</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

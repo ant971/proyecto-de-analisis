@@ -1,0 +1,19 @@
+<?php
+if(isset($_POST['submit_profesor'])){
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $cedula = $_POST['cedula'];
+    $codigo = $_POST['codigo'];
+    $telefono = $_POST['telefono'];
+    $oficina = $_POST['oficina'];
+    $correo = $_POST['correo'];
+
+    $sql = "INSERT INTO tabla_profesor (nombre, apellido, cedula, codigo, telefono, oficina, correo) VALUES ('$nombre', '$apellido', '$cedula', '$codigo', '$telefono', '$oficina', '$correo')";
+
+    if(mysqli_query($con, $sql)){
+        echo "Los datos del profesor se han guardado correctamente.";
+    } else{
+        echo "Error al guardar los datos del profesor: " . mysqli_error($con);
+    }
+}
+?>

@@ -1,0 +1,137 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica;
+    font-size: large;
+    background-color: var(--background-color);
+    line-height: 1.5;
+    /*background-image: url(imagenes/fondo.jpg);
+    background-size: cover;
+    backdrop-filter: opacity(10%);*/
+}
+/*estilos de las imagenes*/
+.imagenes{
+    display:flex;
+}
+.logos{
+    margin: 10px;
+    width: 600px;
+    height: 300px;
+}
+/*estilo del menu*/
+.menu{
+width: 100%;
+padding: 0%;
+margin: auto;
+background: #43a047;
+list-style: none;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 2rem;
+    display: block;
+}
+.menu li{
+    display: inline-block;
+    text-align:end;
+}
+.menu li a:hover{
+    background: #ef8354;
+}
+
+/*estilo de los botones de abajo*/
+.formularios{
+    display: flex;
+    bottom: 10px;
+    width: 100%;
+}
+.formulario li{
+    width: 200px;
+    height: 70px;
+    margin: 5px 130px;
+    background: #ef5d1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.formulario li a{
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
+/*estilos del footer*/
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+ul{
+    list-style: none;
+}
+.pie{
+    background-color: #24262b;
+    padding: 70px 0;
+}
+.linea{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    width: 25%;
+    padding: 0 15px;
+}
+.col h4{
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+.col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 50px;
+    bottom: -5px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+}
+.col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+.redes a{
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    height: 40px;
+    padding: 4px;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255,255,255, 0.2);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+.redes a:hover{
+    color: #24262b;
+    background-color: white;
+}

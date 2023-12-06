@@ -1,0 +1,81 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica;
+    font-size: large;
+    line-height: 1.5;
+}
+/*estilos del menu superior*/
+.menu{
+    width: 100%;
+    padding: 0%;
+    margin: auto;
+    background: #43a047;
+    list-style: none;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 2rem;
+    display: block;
+}
+.menu li{
+    display: inline-block;
+    text-align:end;
+}
+.menu li a:hover{
+    background: #ef8354;
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+ul{
+    list-style: none;
+}
+/*estilos de subtitulos*/
+h2{
+    color: red;
+    text-align: center;
+}
+.unidad label, p, .servicio label, .extension label, .servicio label, .proyecto_extension label, 
+.asistencia label, .publicacion label{
+    margin: 1.5%;
+}
+.extension{
+    margin: 1.5%;
+    box-shadow: 0 0 20px 0 rgba(0,  0, 0, 0.2), 0 5px 5px 0 rgba(0,  0, 0, 0.24);
+}
+.extension label{
+    font-size: 1.5rem;
+    color: red;
+    font-weight: bolder;
+}
+.unidad label{
+    font-size: 1.5rem;
+    color: red;
+    font-weight: bolder;
+}
+/*estilos de las primeras opciones*/
+.opciones{
+    width: 80%;
+    margin-left: 10%;
+}
+.opciones select{
+    width: 200px;
+    height: 35px;
+}
+/*estilos de datos del profesor*/
+.datos, .opciones{
+    margin: 1.5%;
+    padding: 1em;
+    box-shadow: 0 0 20px 0 rgba(0,  0, 0, 0.2), 0 5px 5px 0 rgba(0,  0, 0, 0.24);
+}
+/*estilos del boton*/
+.boton{
+    margin-left: 50%;
+    background-color: #ef8354;
+}
